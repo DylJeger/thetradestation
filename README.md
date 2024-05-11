@@ -1,6 +1,6 @@
 # THE TRADE STATION
 #### Video Demo: https://youtu.be/Wa5YGpMyQHE
-#### A web-based application using Python, HTML, CSS, SQL, Flask and Yahoo Finance's API to display charts, apply tailored indicators, and offer execution services.
+#### A web-based application using Flask, Python, SQL, HTML, CSS & Yahoo Finance's API to display charts, apply tailored indicators, and offer execution services.
 
 <br>
 <p> Using the session library, users are required to log in to access the website. The registration page enables them to do so by inputting their email, repeating their password, and accepting the terms of use. After registration, users need to log in on the index page to access their account.
