@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}{% endblock %}
+        <link rel="stylesheet" href="/static/deco.css">
+    </head>
+
+    <body>
+        <!-- NAV BAR-->
+        <ul>
+            <li><a href="/execution">Portfolio & Execution</a></li>
+            <li><a href="/charts">Analysis</a></li>
+            <li style="float:right; background-color:#546e7a;"><a href="/logoff">Log out</a></li>
+        </ul>
+        {% block body %}{% endblock %}
+    </body>
+</html>

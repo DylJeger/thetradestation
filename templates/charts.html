@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}Technical Analysis{% endblock %}
+
+
+{% block body %}
+<h1>Technical Analysis</h1>
+<div style="display: flex; justify-content: space-between;">
+    <div>
+    <h2>Select Timeframe</h2>
+    <form method="post" action="/charts">
+        <input type="radio" value="30" name="timeframe" required>
+        <label>1 month</label>
+        <input type="radio" value="90" name="timeframe">
+        <label>3 months</label>
+        <input type="radio" value="180" name="timeframe">
+        <label>6 months</label>
+        <input type="radio" value="ytd" name="timeframe">
+        <label>YTD</label>
+        <input type="radio" value="365" name="timeframe">
+        <label>1 year</label>
+        <input type="radio" value="1825" name="timeframe">
+        <label>5 years</label>
+    </div>
+    <div style="text-align: right">
+    <h2 style="text-align: left">Select Indicators</h2>
+    <input type="checkbox" name="ma1">
+    <label>MA</label>
+    <input type="number" name="len1" Placeholder="length" style="width:53px">
+    <input type="checkbox" name="ma2">
+    <label>MA</label>
+    <input type="number" name="len2" Placeholder="length" style="width:53px">
+    <input type="checkbox" name="ma3">
+    <label>MA</label>
+    <input type="number" name="len3" Placeholder="length" style="width:53px">
+    <input type="checkbox" name="vol">
+    <label>Volume</label>
+    <input style="margin-left:80px; margin-right:10px; margin-bottom: 5px; text-align: center" name="ticker" autocomplete="off" required type="text" Placeholder="Ticker" required>
+    <button type="submit" style="margin-left:10px; margin-right:10px; padding-left:20px; padding-right:20px"><b><i>Submit</i></b></button>
+    </div>
+</div>
+    <hr>
+</form>
+{% if chart %}
+<h2 style="text-align: center">Current Price: {{ p_last }}</h2>
+{% endif %}
+{% if err %}
+    <h2 style="text-align: center; color: red">{{ err }}</h2>
+{% endif %}
+{% if chart %}
+    <img style="align:center" src="data:image/png;base64,{{ chart }}">
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <link rel="stylesheet" href="/static/deco.css">
+    </head>
+    <body style="background-color: #C4C2C2">
+        <h1 style="text-align: center">Registration</h1>
+        <br><hr><br><br><br><br><br><br><br>
+        <h2 style="text-align: center"><b>Input your details below to open an account with us</b></h2>
+        <br>
+        <b style="color:red; text-align: center">{% if error %} {{ error }} {% endif %}</b>
+        <br>
+        <div style="text-align: center">
+        <form action="/register" method="post">
+            <input type="text" autocomplete="off" required name="email" Placeholder="e-mail address" style="background-color: #34495E; padding: 5px; margin: 2px">
+            <input type="password" autocomplete="off" required name="password" Placeholder="password" style="background-color: #34495E; padding: 5px; margin: 2px">
+            <input type="password" autocomplete="off" required name="confirmation" Placeholder="confirm password" style="background-color: #34495E; padding: 5px; margin: 2px">
+            <br>
+            <input type="checkbox" required name="agree" style="accent-color: #34495E; padding: 5px; margin: 4px">
+            <label for="agree">I agree to the terms of use and privacy policy</label>
+            <br>
+            <button type="submit" style="background-color: #34495E; padding: 5px; margin: 2px">Register</button>
+        </form>
+        </div>
+    </body>
+</html>

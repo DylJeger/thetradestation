@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THE TRADE STATION</title>
+        <link rel="stylesheet" href="/static/deco.css">
+    </head>
+    <body style="background-color: #C4C2C2">
+        <h1>THE TRADE STATION</h1>
+        <br>
+        <br>
+        <h2 style="text-align: center"><i>- Execution Services & Cutting-Edge Analysis -</i></h2>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="text-align: center">Please Register or Log in to proceed</p>
+        <br>
+        <b style="color:red">{% if error %} {{ error }} {% endif %}</b>
+        <div style="text-align: center">
+        <form action="/" method="post">
+            <input type="text" required autocomplete="off" Placeholder="E-mail" name="name" style="background-color: #34495E; padding: 5px; margin: 2px">
+            <input type="password" required autocomplete="off" Placeholder="Password" name="password" style="background-color: #34495E; padding: 5px; margin: 2px">
+            <button type="submit" style="background-color: #34495E; padding: 5px; margin: 2px">Submit</button>
+        </form>
+        </div>
+        <br>
+        <h4 style="text-align: center">Not yet registered? <a href="/register" style="color: inherit;">Register here</a></h4>
+    </body>
+</html>

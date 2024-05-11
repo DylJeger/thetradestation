@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}Execute Trade{% endblock %}
+
+
+{% block body %}
+<h1>Execute Trade</h1>
+<div style="text-align: center">
+<form action="/execution" method="post">
+    <select Placeholder="Buy/Sell" name="dir" required id="exec">
+        <option disabled selected hidden>Buy/Sell</option>
+        <option value="B">Buy</option>
+        <option value="S">Sell</option>
+    </select>
+    <input type="text" required autocomplete="off" Placeholder="Symbol" name="ticker" id="exec">
+    <input type="number" min="1" required autocomplete="off" Placeholder="Quantity" name="qty" id="exec">
+    <button type="submit" id="exec"><b><i>Send order</i></b></button>
+</form>
+</div>
+<hr>
+<h2 style="color: red; text-align: center"><b>{{ er }}</b></h2>
+<h1>Portfolio</h1>
+<table style="align: center">
+    <tr>
+        <th>INSTRUMENTS</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+        <th>DATE</th>
+        <th>PnL</th>
+    </tr>
+    {% for stock in portf %}
+    <tr>
+        <td>{{ stock["SYMBOL"] }}</td>
+        <td>{{ stock["QTY"] }}</td>
+        <td>{{ stock["PRICE"] }}</td>
+        <td>{{ stock["DATE"] }}</td>
+        <td>{{ stock["PNL"] }}</td>
+    </tr>
+
+    {% endfor %}
+</table>
+<br>
+<h2 style="text-align: center"><b>Current funds:  $<i>{{ fds }}</i></b></h2>
+{% endblock %}
