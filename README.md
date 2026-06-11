@@ -1,4 +1,4 @@
-# THE TRADE STATION
+# THE TRADE STATION (CS50x Final Project)
 #### Video Demo: https://youtu.be/Wa5YGpMyQHE
 #### A web-based application using Flask, Python, SQL, HTML, CSS & Yahoo Finance's API to display charts, apply tailored indicators, and offer execution services.
 
